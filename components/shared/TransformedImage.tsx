@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { dataUrl, debounce, download, getImageSize } from "@/lib/utils";
 import { CldImage, getCldImageUrl } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
@@ -19,12 +19,15 @@ const TransformedImage = ({
   ) => {
     e.preventDefault();
 
-    download(getCldImageUrl({
-      width: image?.width,
-      height: image?.height,
-      src: image?.publicId,
-      ...transformationConfig
-    }), title)
+    download(
+      getCldImageUrl({
+        width: image?.width,
+        height: image?.height,
+        src: image?.publicId,
+        ...transformationConfig,
+      }),
+      title
+    );
   };
   return (
     <div className="flex flex-col gap-4">
@@ -33,6 +36,7 @@ const TransformedImage = ({
         {hasDownload && (
           <button className="download-btn" onClick={downloadHandler}>
             <Image
+              alt="Downloading..."
               src="/assets/icons/download.svg"
               width={24}
               height={24}
@@ -59,12 +63,11 @@ const TransformedImage = ({
                 setIsTransforming && setIsTransforming(false);
               }, 8000);
             }}
-          {...transformationConfig}
-          
+            {...transformationConfig}
           />
-           {isTransforming && (
+          {isTransforming && (
             <div className="transforming-loader">
-              <Image 
+              <Image
                 src="/assets/icons/spinner.svg"
                 width={50}
                 height={50}
