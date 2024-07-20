@@ -1,25 +1,26 @@
 import { model, models, Schema } from "mongoose";
 import { title } from "process";
 export interface IImage extends Document {
-    title: string;
-    transformationType: string;
-    publicId: string;
-    secureUrl: string; 
-    width?: number;
-    height?: number;
-    config?: object; 
-    transformationUrl?: string; 
-    aspectRatio?: string;
-    color?: string;
-    prompt?: string;
-    author: {
-      _id: string;
-      firstName: string;
-      lastName: string;
-    }
-    createdAt?: Date;
-    updatedAt?: Date;
-  }
+  _id?: String;
+  title: string;
+  transformationType: string;
+  publicId: string;
+  secureUrl: string;
+  width?: number;
+  height?: number;
+  config?: object;
+  transformationUrl?: string;
+  aspectRatio?: string;
+  color?: string;
+  prompt?: string;
+  author: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+  };
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 const ImageSchema = new Schema({
   title: { type: String, required: true },
   transformationType: { type: String, required: true },
@@ -43,5 +44,5 @@ const ImageSchema = new Schema({
   updateedAt: { type: Date, default: Date.now },
 });
 
-const ImageModel = models?.Image || model('Image', ImageSchema)
+const ImageModel = models?.Image || model("Image", ImageSchema);
 export default ImageModel;
