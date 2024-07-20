@@ -1,7 +1,7 @@
 import { model, models, Schema } from "mongoose";
 import { title } from "process";
 export interface IImage extends Document {
-  _id?: String;
+  _id?: String | null;
   title: string;
   transformationType: string;
   publicId: string;
