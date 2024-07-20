@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ClerkProvider  ,SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton} from "@clerk/nextjs";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
+
+
+import { ClerkProvider} from "@clerk/nextjs";
 
 const IBMPLEX = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -28,6 +29,8 @@ export default function RootLayout({
       <html lang="en">
         <body className={cn("font-IBMPLEX antialiased", IBMPLEX.variable)}>
           {children}
+          <SpeedInsights />
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
