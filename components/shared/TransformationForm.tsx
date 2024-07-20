@@ -32,7 +32,7 @@ import { InsufficientCreditsModal } from "./InsufficientCreditsModal";
 
 export const formSchema = z.object({
   title: z.string(),
-  aspetRation: z.string().optional(),
+  aspetRatio: z.string().optional(),
   color: z.string().optional(),
   prompt: z.string().optional(),
   publicId: z.string(),
@@ -49,14 +49,14 @@ const TransformationForm = ({
   const transformationType = transformationTypes[type];
   const [image, setImage] = useState(data);
   const [newTransformation, setNewTransformation] =
-    useState<TransferFunction | null>(null);
+    useState<Transformations | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isTransforming, setIsTransforming] = useState(false);
   const [transformationConfig, setTransformationConfig] = useState(config);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
-  console.log(image);
+  console.log(type);
 
   const initialValue =
     data && action === "Update"
@@ -84,16 +84,16 @@ const TransformationForm = ({
         src: image?.publicId,
         ...transformationConfig,
       });
-      const ImageData = {
+      const imageData = {
         title: values.title,
-        publicId: values.publicId,
-        color: values.color,
+        publicId: image?.publicId,
         transformationType: type,
         width: image?.width,
         height: image?.height,
         config: transformationConfig,
-        secureUrl: image?.secureUrl,
-        tramsformationUrl,
+        secureUrl: image?.secureURL,
+        transformationUrl: tramsformationUrl,
+        aspectRatio: values.aspetRatio,
         prompt: values.prompt,
         color: values.color,
       };
@@ -101,9 +101,9 @@ const TransformationForm = ({
         // Add Image
         try {
           const newImage = await addImage({
-            image: ImageData,
-            path: "/",
+            image: imageData,
             userId,
+            path: "/",
           });
           if (newImage) {
             form.reset();
@@ -147,7 +147,7 @@ const TransformationForm = ({
       width: imageSize.width,
       height: imageSize.height,
     }));
-    setNewTransformation(transformationType?.config);
+    setNewTransformation(transformationType.config);
     return onChangeField(value);
   };
   const onInputChangeHandler = (
@@ -182,12 +182,11 @@ const TransformationForm = ({
     });
   };
 
-  useEffect(()=>{
-    if(image && (type === 'restore' || type === 'removeBackground')) {
-      setNewTransformation(transformationType.config)
+  useEffect(() => {
+    if (image && (type === "restore" || type === "removeBackground")) {
+      setNewTransformation(transformationType.config);
     }
-
-  },[image,transformationType.config,type])
+  }, [image, transformationType.config, type]);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -202,7 +201,7 @@ const TransformationForm = ({
         {type === "fill" && (
           <CustomField
             control={form.control}
-            name="aspectRatio"
+            name="aspetRatio"
             formLabel="Aspect Ratio"
             className="w-full"
             render={({ field }) => (
