@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/constants";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut,  UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,7 +13,7 @@ const Sidebar = () => {
     <aside className="sidebar">
     <div className="flex size-full flex-col gap-4">
       <Link href="/" className="sidebar-logo">
-        <Image src="/assets/images/logo-text.svg" alt="logo" width={180} height={28} />
+        <Image  src="/perfect_4.png" alt="logo" width={250} height={28} />
       </Link>
 
       <nav className="sidebar-nav">

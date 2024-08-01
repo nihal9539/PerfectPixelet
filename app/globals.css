@@ -67,6 +67,10 @@
 }
 
 @layer base {
+
+::-webkit-scrollbar{
+  display: none;
+}
   * {
     @apply border-border;
   }
@@ -89,6 +93,18 @@
 
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
+
+  .bg{
+    background: hsla(192, 17%, 94%, 1);
+
+background: radial-gradient(circle, hsla(192, 17%, 94%, 1) 0%, hsla(240, 67%, 94%, 1) 100%);
+
+background: -moz-radial-gradient(circle, hsla(192, 17%, 94%, 1) 0%, hsla(240, 67%, 94%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, hsla(192, 17%, 94%, 1) 0%, hsla(240, 67%, 94%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#eef2f3", endColorstr="#E6E6FA", GradientType=1 );
+  }
   /* ===== UTILITIES */
   .wrapper {
     @apply max-w-5xl mx-auto px-5 md:px-10 w-full text-dark-400 p-16-regular;
@@ -312,11 +328,11 @@
 
   /* Sidebar Component */
   .sidebar {
-    @apply hidden h-screen w-72 bg-white p-5 shadow-md shadow-purple-200/50 lg:flex;
+    @apply hidden h-screen w-72 bg-white p-5 pt-2 shadow-md shadow-purple-200/50 lg:flex;
   }
 
   .sidebar-logo {
-    @apply flex items-center gap-2 md:py-2;
+    @apply flex items-center justify-center gap-2 md:py-2;
   }
 
   .sidebar-nav {
