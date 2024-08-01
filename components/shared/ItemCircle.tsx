@@ -14,7 +14,7 @@ export function ItemCircle() {
         duration={20}
         reverse
       >
-        <Image src={"/assets/icons/image.svg"} width={70} height={70}/>
+        <Image alt="image" src={"/assets/icons/image.svg"} width={70} height={70}/>
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
@@ -23,7 +23,7 @@ export function ItemCircle() {
         delay={20}
         reverse
       >
-        <Image src={"/assets/icons/stars.svg"} width={70} height={70}/>
+        <Image alt="image" src={"/assets/icons/stars.svg"} width={70} height={70}/>
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
@@ -31,7 +31,7 @@ export function ItemCircle() {
         duration={20}
         
       >
-        <Image src={"/assets/icons/scan.svg"} width={70} height={70}/>
+        <Image alt="image" src={"/assets/icons/scan.svg"} width={70} height={70}/>
       </OrbitingCircles>
 
       <OrbitingCircles
@@ -41,7 +41,7 @@ export function ItemCircle() {
         delay={80}
         
       >
-        <Image src={"/assets/icons/camera.svg"} width={70} height={70}/>
+        <Image alt="image" src={"/assets/icons/camera.svg"} width={70} height={70}/>
       </OrbitingCircles>
     </div>
   );
