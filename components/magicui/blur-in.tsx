@@ -28,10 +28,10 @@ const BlurIn = ({ word, className, variant, duration = 1 }: BlurIntProps) => {
       variants={combinedVariants}
       className={cn(
         className,
-        "font-display text-center text-5xl font-bold tracking-[-0.02em] drop-shadow-sm  md:leading-[5rem]",
+        "font-display text-center text-5xl max-lg:text-2xl font-bold tracking-[-0.02em] drop-shadow-sm  md:leading-[5rem]",
       )}
     >
-      {word ? word :(<span>Transform Your Images with Cutting-Edge <br/> AI Technology</span>)}
+      {word ? word :(<span>Transform Your Images with Cutting-Edge <br className="max-lg:hidden block"/> AI Technology</span>)}
     </motion.h1>
   );
 };

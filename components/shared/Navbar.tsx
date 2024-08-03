@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -10,9 +11,17 @@ const Navbar = () => {
       <div className=" mx-auto px-4 py-2  flex justify-between items-center">
         {/* Left Side: Company Icon */}
         <div className="flex items-center">
-          <Link href="/home" className="sidebar-logo">
-            <Image src="/p-1.jpeg" alt="logo" width={40} height={40} className="rounded-md" />
-            <p className="text-3xl font-bold tracking-tighter">Prefect Pixelete</p>
+          <Link href="/" className="sidebar-logo">
+            <Image
+              src="/p-1.jpeg"
+              alt="logo"
+              width={40}
+              height={40}
+              className="rounded-md"
+            />
+            <p className="text-3xl font-bold tracking-tighter">
+              Prefect Pixelete
+            </p>
           </Link>
         </div>
 
@@ -29,9 +38,7 @@ const Navbar = () => {
               hello
             </div>
           </li>
-          <li className="text-black p-2.5 font-semibold b rounded-md">
-            <a href="#">Home</a>
-          </li>
+
           <li className="text-black p-2.5 font-semibold px-3.5 rounded-md">
             <a href="#">About</a>
           </li>
@@ -41,11 +48,21 @@ const Navbar = () => {
         </ul>
 
         {/* Right Side: Search Bar */}
-        <div className="mx-4 space-x-3">
-          <Button className={cn("text-black text-lg p-5 bg-gray-200")}>
+        <div className="mx-4 flex items-center  space-x-3">
+          {/* <Button className={cn("text-black text-lg p-5 bg-gray-200")}>
             Login
+          </Button> */}
+          <SignedOut>
+            <Button className={cn("text-black text-lg p-5 bg-gray-200")}>
+              <Link href="/sign-in">Login</Link>
+            </Button>
+          </SignedOut>
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <Button className={cn("text-lg bg-black p-5")}>
+            <Link href={"/dashboard"}>Start Creating</Link>
           </Button>
-          <Button className={cn("text-lg bg-black p-5")}>Start Creating</Button>
         </div>
       </div>
     </nav>
