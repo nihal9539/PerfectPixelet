@@ -309,7 +309,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#eef2f3", en
   }
 
   .media-uploader_cta-image {
-    @apply rounded-[16px] bg-white  p-5 shadow-sm shadow-purple-200/50;
+    @apply rounded-[16px] flex gap-2 bg-dark-600 text-white  p-3 shadow-sm shadow-purple-200/50;
   }
 
   /* Navbar Component */
@@ -357,7 +357,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#eef2f3", en
   }
 
   .media-uploader-field {
-    @apply grid h-fit min-h-[200px] grid-cols-1 gap-5 py-4 md:grid-cols-2;
+    @apply grid h-fit min-h-[350px] grid-cols-1 gap-5 py-4 md:grid-cols-2;
   }
 
   /* TransformedImage Component */

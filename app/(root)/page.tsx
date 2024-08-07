@@ -14,7 +14,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
       <div className="">
         <div className="relative flex h-screen w-full items-center justify-center overflow-hidden rounded-lg border-none bg-background  max-lg:px-2">
           <div className="z-10 whitespace-pre-wrap text-center font-medium text-black dark:text-white bg-transparent">
@@ -62,7 +61,7 @@ const Home = () => {
           </div>
           <HomeGridPattern />
         </div>
-        <div className="flex h-screen justify-between px-16 items-center max-lg:flex-col">
+        <div className="flex min-h-screen justify-between px-16 items-center max-lg:flex-col">
           <div className="w-1/2 max-lg:w-full px-10 text-center">
             <h1 className="text-5xl font-bold mb-10">
               Transform Images Instantly <br /> with AI Magic
@@ -80,7 +79,7 @@ const Home = () => {
             <ItemCircle />
           </div>
         </div>
-        <div className="flex h-screen justify-between px-16 items-center max-lg:flex-col">
+        <div className="flex min-h-screen justify-between px-16 items-center max-lg:flex-col">
           <div className="w-1/2 max-lg:w-full flex justify-center items-center">
             <div className="flex">
               <Image
@@ -110,7 +109,12 @@ const Home = () => {
             </p>
 
             <div className="p-14 rounded-md  mt-5 border-2 border-black  border-dashed">
-              <Link href={"/remove-background"} className="bg-black/90 text-white p-3 px-5 rounded-md">Upload Image</Link>
+              <Link
+                href={"/removeBackground"}
+                className="bg-black/90 text-white p-3 px-5 rounded-md"
+              >
+                Upload Image
+              </Link>
             </div>
           </div>
         </div>
