@@ -7,26 +7,32 @@ export const navLinks = [
   {
     label: "Image Restore",
     route: "/dashboard/transformations/add/restore",
+    navLink:"/restore",
     icon: "/assets/icons/image.svg",
   },
   {
     label: "Generative Fill",
     route: "/dashboard/transformations/add/fill",
+    navLink:"/fill",
+
     icon: "/assets/icons/stars.svg",
   },
   {
     label: "Object Remove",
     route: "/dashboard/transformations/add/remove",
+    navLink:"/remove",
     icon: "/assets/icons/scan.svg",
   },
   {
     label: "Object Recolor",
     route: "/dashboard/transformations/add/recolor",
+    navLink:"/recolor",
     icon: "/assets/icons/filter.svg",
   },
   {
     label: "Background Remove",
     route: "/dashboard/transformations/add/removeBackground",
+    navLink:"/removeBackground",
     icon: "/assets/icons/camera.svg",
   },
   {
