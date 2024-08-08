@@ -7,7 +7,12 @@ const RippleComponenet = () => {
       <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tight text-white">
       Al Tools
       </p>
-      <Ripple />
+      <div className='block max-lg:hidden'>
+      <Ripple  />
+      </div>
+    <div className="hidden max-lg:block">
+    <Ripple mainCircleSize={150} />
+    </div>
     </div>
   )
 }

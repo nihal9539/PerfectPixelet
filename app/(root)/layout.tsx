@@ -4,7 +4,7 @@ import React from 'react'
 const layout = ({children}:{children:React.ReactNode}) => {
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className='p-20 max-lg:px-2'>
             {children}
         </div>

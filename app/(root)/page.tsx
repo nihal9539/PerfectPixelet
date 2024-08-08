@@ -8,16 +8,20 @@ import ShinyButton from "@/components/magicui/shiny-button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import RemoveBackground from "@/components/shared/RemoveBackground";
+import ImageRestore from "@/components/shared/ImageRestore";
+import GenerateFill from "@/components/shared/GenerateFill";
+import ObjectRemove from "@/components/shared/ObjectRemove";
+import ObjectRecolor from "@/components/shared/ObjectRecolor";
 
 const Home = () => {
   const transition = { type: "spring", duration: 3 };
 
   return (
     <>
-      <div className="">
         <div className="relative flex h-screen w-full items-center justify-center overflow-hidden rounded-lg border-none bg-background  max-lg:px-2">
           <div className="z-10 whitespace-pre-wrap text-center font-medium text-black dark:text-white bg-transparent">
-            <div className="mb-10 px-28">
+            <div className="mb-10 px-28 max-lg:px-2">
               <BlurIn className="font-bold text-black dark:text-white" />
             </div>
             <div className="text-xl mb-16 max-lg:px-0 px-20">
@@ -61,9 +65,9 @@ const Home = () => {
           </div>
           <HomeGridPattern />
         </div>
-        <div className="flex min-h-screen justify-between px-16 items-center max-lg:flex-col">
+        <div className="flex min-h-screen justify-between px-16 max-lg:px-0 items-center max-lg:flex-col">
           <div className="w-1/2 max-lg:w-full px-10 text-center">
-            <h1 className="text-5xl font-bold mb-10">
+            <h1 className="text-5xl max-lg:text-2xl font-bold mb-10">
               Transform Images Instantly <br /> with AI Magic
             </h1>
 
@@ -75,50 +79,15 @@ const Home = () => {
               takes.
             </p>
           </div>
-          <div className="w-1/2 max-lg:w-full">
+          <div className="w-1/2 max-lg:w-full  overflow-hidden">
             <ItemCircle />
           </div>
         </div>
-        <div className="flex min-h-screen justify-between px-16 items-center max-lg:flex-col">
-          <div className="w-1/2 max-lg:w-full flex justify-center items-center">
-            <div className="flex">
-              <Image
-                alt="image before remove background"
-                src={"/assets/images/bg-image.jpeg"}
-                width={250}
-                height={450}
-              />
-              <Image
-                alt="image after remove background"
-                src={"/assets/images/bg-remove.png"}
-                width={250}
-                height={450}
-              />
-            </div>
-          </div>
-          <div className="w-1/2 max-lg:w-full px-10 text-center">
-            <h1 className="text-5xl font-bold mb-10">
-              Remove Background from Image Effortlessly
-            </h1>
-
-            <p className="font-semibold text-lg">
-              Removing background from an image has never been easier with our
-              AI background eraser. You can make background transparent and
-              create stunning visuals in no time. It’s the best bg remover and
-              png maker.
-            </p>
-
-            <div className="p-14 rounded-md  mt-5 border-2 border-black  border-dashed">
-              <Link
-                href={"/removeBackground"}
-                className="bg-black/90 text-white p-3 px-5 rounded-md"
-              >
-                Upload Image
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+        <RemoveBackground />
+        <ImageRestore />
+        <GenerateFill />
+        <ObjectRemove />
+        {/* <ObjectRecolor /> */}
     </>
   );
 };

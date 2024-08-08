@@ -1,6 +1,11 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { navLinks } from "@/constants";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
@@ -13,14 +18,20 @@ const MobileNav = () => {
 
   return (
     <header className="header">
-      <Link href="/" className="flex items-center gap-2 md:py-2">
-        <Image
-          src="/assets/images/logo-text.svg"
-          alt="logo"
-          width={180}
-          height={28}
-        />
-      </Link>
+      <div className="flex items-center">
+        <Link href="/dashboard" className="sidebar-logo">
+          <Image
+            src="/p-1.jpeg"
+            alt="logo"
+            width={35}
+            height={35}
+            className="rounded-md"
+          />
+          <p className="text-2xl font-bold tracking-tighter">
+            Prefect Pixelete
+          </p>
+        </Link>
+      </div>
 
       <nav className="flex gap-2">
         <SignedIn>
@@ -38,13 +49,20 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent className="sheet-content sm:w-64">
               <>
-                <Image
-                  src="/assets/images/logo-text.svg"
-                  alt="logo"
-                  width={152}
-                  height={23}
-                />
-
+                <div className="flex items-center">
+                  <Link href="/dashboard" className="sidebar-logo">
+                    <Image
+                      src="/p-1.jpeg"
+                      alt="logo"
+                      width={35}
+                      height={35}
+                      className="rounded-md"
+                    />
+                    <p className="text-2xl font-bold tracking-tighter">
+                      Prefect Pixelete
+                    </p>
+                  </Link>
+                </div>
                 <ul className="header-nav_elements">
                   {navLinks.map((link) => {
                     const isActive = link.route === pathname;
@@ -56,18 +74,20 @@ const MobileNav = () => {
                         } p-18 flex whitespace-nowrap text-dark-700`}
                         key={link.route}
                       >
-                        <Link
-                          className="sidebar-link cursor-pointer"
-                          href={link.route}
-                        >
-                          <Image
-                            src={link.icon}
-                            alt="logo"
-                            width={24}
-                            height={24}
-                          />
-                          {link.label}
-                        </Link>
+                        {/* <SheetClose asChild> */}
+                          <Link
+                            className="sidebar-link cursor-pointer"
+                            href={link.route}
+                          >
+                            <Image
+                              src={link.icon}
+                              alt="logo"
+                              width={24}
+                              height={24}
+                            />
+                            {link.label}
+                          </Link>
+                        {/* </SheetClose> */}
                       </li>
                     );
                   })}

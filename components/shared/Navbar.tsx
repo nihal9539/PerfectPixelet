@@ -40,7 +40,7 @@ const Navbar = () => {
             p-1
             "
             >
-              <div className="flex flex-col gap-5 font-normal text-lg ">
+              <div className="group-hover:flex flex-col gap-5 font-normal text-lg hidden  ">
                 {navLinks.slice(1, 6).map((link) => (
                   <div key={link.navLink} className="flex gap-4 ">
                     <Image

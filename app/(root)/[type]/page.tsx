@@ -7,7 +7,7 @@ const AddTreansformationPage = dynamic(() => import('@/app/dashboard/transformat
 
 const Modify = ({ params: { type } }:SearchParamProps) => {
   return (
-    <div className='p-16 px-20 pt-0'>
+    <div className='p-16 px-20 max-lg:px-2 pt-0'>
       <AddTreansformationPage  params={{ type ,id:type}}  />
     </div>
   );
