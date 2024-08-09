@@ -13,13 +13,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 
-const MobileNav = () => {
+const MobileNav = ({homepage}:{homepage:boolean}) => {
   const pathname = usePathname();
 
   return (
-    <header className="header">
+    <header className="header z-[999]">
       <div className="flex items-center">
-        <Link href="/dashboard" className="sidebar-logo">
+        <Link href="/" className="sidebar-logo">
           <Image
             src="/p-1.jpeg"
             alt="logo"
@@ -50,7 +50,7 @@ const MobileNav = () => {
             <SheetContent className="sheet-content sm:w-64">
               <>
                 <div className="flex items-center">
-                  <Link href="/dashboard" className="sidebar-logo">
+                  <Link href="/" className="sidebar-logo">
                     <Image
                       src="/p-1.jpeg"
                       alt="logo"
@@ -63,7 +63,39 @@ const MobileNav = () => {
                     </p>
                   </Link>
                 </div>
-                <ul className="header-nav_elements">
+                {
+                  homepage ? (
+                    <ul className="header-nav_elements">
+                  {navLinks.slice(1,6).map((link) => {
+                    const isActive = link.route === pathname;
+
+                    return (
+                      <li
+                        className={`${
+                          isActive && "gradient-text"
+                        } p-18 flex whitespace-nowrap text-dark-700`}
+                        key={link.route}
+                      >
+                        <SheetClose asChild>
+                          <Link
+                            className="sidebar-link cursor-pointer"
+                            href={link.navLink}
+                          >
+                            <Image
+                              src={link.icon}
+                              alt="logo"
+                              width={24}
+                              height={24}
+                            />
+                            {link.label}
+                          </Link>
+                        </SheetClose>
+                      </li>
+                    );
+                  })}
+                </ul>
+                  ):(
+                    <ul className="header-nav_elements">
                   {navLinks.map((link) => {
                     const isActive = link.route === pathname;
 
@@ -74,7 +106,7 @@ const MobileNav = () => {
                         } p-18 flex whitespace-nowrap text-dark-700`}
                         key={link.route}
                       >
-                        {/* <SheetClose asChild> */}
+                        <SheetClose asChild>
                           <Link
                             className="sidebar-link cursor-pointer"
                             href={link.route}
@@ -87,11 +119,13 @@ const MobileNav = () => {
                             />
                             {link.label}
                           </Link>
-                        {/* </SheetClose> */}
+                        </SheetClose>
                       </li>
                     );
                   })}
                 </ul>
+                  )
+                }
               </>
             </SheetContent>
           </Sheet>

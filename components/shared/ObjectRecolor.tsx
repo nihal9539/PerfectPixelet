@@ -1,18 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const ObjectRecolor = () => {
   return (
-    <div className="flex p-16  justify-between px-16 items-center max-lg:flex-col">
+    <div className="flex p-16 max-lg:px-2  justify-between px-16 items-center max-lg:flex-col">
       <div className="w-1/2 max-lg:w-full flex justify-center items-center">
         <div className="flex gap-2">
-          <img src={"/assets/images/recolor.jpg"} className="w-72" alt="" />
-          <img src={"/assets/images/recolor-1.jpg"} className="w-72" alt="" />
+          <img src={"/assets/images/recolor.jpg"} className="max-lg:w-40 w-72" alt="" />
+          <img src={"/assets/images/recolor-1.jpg"} className="max-lg:w-40 w-72" alt="" />
         </div>
       </div>
-      <div className="w-1/2 max-lg:w-full px-10 text-center">
-        <h1 className="text-5xl font-bold mb-10">
+      <div className="w-1/2 max-lg:w-full px-10 max-lg:px-2 text-center">
+        <h1 className="text-5xl font-bold mb-10 max-lg:text-2xl">
           Recolor Pictures Easily and Professionally{" "}
         </h1>
 

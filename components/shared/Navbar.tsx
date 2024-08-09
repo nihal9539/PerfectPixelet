@@ -8,7 +8,7 @@ import { navLinks } from "@/constants";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white fixed top-0 left-0 w-full z-[99999] px-10">
+    <nav className="max-lg:hidden bg-white fixed top-0 left-0 w-full z-[99999] px-10">
       <div className=" mx-auto px-4 py-2  flex justify-between items-center">
         {/* Left Side: Company Icon */}
         <div className="flex items-center">

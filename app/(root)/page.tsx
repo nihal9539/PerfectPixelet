@@ -1,13 +1,10 @@
 "use client";
 import HomeGridPattern from "@/components/shared/HomeGridPattern";
-import Navbar from "@/components/shared/Navbar";
 import React from "react";
 import { ItemCircle } from "@/components/shared/ItemCircle";
 import BlurIn from "@/components/magicui/blur-in";
 import ShinyButton from "@/components/magicui/shiny-button";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import RemoveBackground from "@/components/shared/RemoveBackground";
 import ImageRestore from "@/components/shared/ImageRestore";
 import GenerateFill from "@/components/shared/GenerateFill";
@@ -19,7 +16,7 @@ const Home = () => {
 
   return (
     <>
-        <div className="relative flex h-screen w-full items-center justify-center overflow-hidden rounded-lg border-none bg-background  max-lg:px-2">
+        <div className="relative flex h-[90vh] w-full items-center justify-center overflow-hidden rounded-lg border-none bg-background  max-lg:px-2">
           <div className="z-10 whitespace-pre-wrap text-center font-medium text-black dark:text-white bg-transparent">
             <div className="mb-10 px-28 max-lg:px-2">
               <BlurIn className="font-bold text-black dark:text-white" />
@@ -66,7 +63,7 @@ const Home = () => {
           <HomeGridPattern />
         </div>
         <div className="flex min-h-screen justify-between px-16 max-lg:px-0 items-center max-lg:flex-col">
-          <div className="w-1/2 max-lg:w-full px-10 text-center">
+          <div className="w-1/2 max-lg:w-full px-10 max-lg:px-2 text-center">
             <h1 className="text-5xl max-lg:text-2xl font-bold mb-10">
               Transform Images Instantly <br /> with AI Magic
             </h1>
@@ -87,7 +84,7 @@ const Home = () => {
         <ImageRestore />
         <GenerateFill />
         <ObjectRemove />
-        {/* <ObjectRecolor /> */}
+        <ObjectRecolor />
     </>
   );
 };
