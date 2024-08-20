@@ -15,8 +15,9 @@ const IBMPLEX = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PerfectPixelet",
-  description: "AI-powered image generator",
+  title: "PerfectPixelate - AI-Powered Image Generator",
+  description: "Generate and transform images effortlessly with PerfectPixelate. Use our AI-powered tools for outpainting, color replacement, and more.",
+  keywords: "AI image generator, outpainting, color replacement, image editing, PerfectPixelate",
 };
 
 export default function RootLayout({

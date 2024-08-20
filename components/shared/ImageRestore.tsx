@@ -5,8 +5,12 @@ const ImageRestore = () => {
   return (
     <div className="flex p-16 max-lg:px-2 justify-between px-16 max-lg:gap-10 gap-0 items-center max-lg:flex-col">
       <div className="w-1/2 max-lg:w-full px-10 max-lg:px-2 text-center max-lg:order-5">
-        <h1 className="text-5xl font-bold mb-10 max-lg:text-2xl max-lg:mb-2">Free AI Photo Restoration </h1>
-
+        <header>
+          {" "}
+          <h1 className="text-5xl font-bold mb-10 max-lg:text-2xl max-lg:mb-2">
+            Free AI Photo Restoration{" "}
+          </h1>
+        </header>
         <p className="font-semibold text-lg max-lg:text-sm">
           Have old or damaged photos? PerfectPixelate offers a free, AI-powered
           photo restoration service to revive your memories. Our advanced
